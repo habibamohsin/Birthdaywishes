@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe7f0">
+  <title>For Hadi | My Little Sister 💗</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div id="hearts" class="floating-hearts"></div>
+  <canvas id="confetti"></canvas>
+
+  <main class="app">
+
+    <!-- SCREEN 1: THE SURPRISE -->
+    <section class="screen active" id="home">
+      <div class="top-sticker">🎀</div>
+      <p class="eyebrow">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+
+      <h1>Hey, Hadi! 💗</h1>
+
+      <p class="subtitle">
+        To my little sister, my built-in best friend,
+        and my forever partner in crime.
+      </p>
+
+      <div class="hero-gift">🎁</div>
+
+      <div class="paper-note">
+        I've made a little world just for you.
+        No sharing. No stealing. It's ALL yours! 🥹
+      </div>
+
+      <button class="primary" onclick="goTo('password')">
+        Open Your Surprise 💌
+      </button>
+
+      <p class="tiny">Made with love by your favourite sibling ♡</p>
+    </section>
+
+
+    <!-- SCREEN 2: PASSWORD -->
+    <section class="screen" id="password">
+      <div class="top-sticker">🔐</div>
+      <p class="eyebrow">TOP SECRET BIRTHDAY ACCESS</p>
+
+      <h1>Not So Fast, Hadi! 😂</h1>
+
+      <p class="subtitle">
+        Only the birthday girl is allowed inside.
+        Tell me, when is your birthday? 👀
+      </p>
+
+      <div class="lock-emoji">🔒</div>
+
+      <label for="pass">Enter the secret  password</label>
+
+      <input
+        id="pass"
+        type="password"
+        placeholder="guess the date..."
+        autocomplete="off"
+      >
+
+      <button class="primary" onclick="checkPassword()">
+        Unlock My World ✨
+      </button>
+
+      <p id="passError" class="error" aria-live="polite"></p>
+
+      <p class="tiny">Hint: No Hint for today! </p>
+
+      <button class="back-btn" onclick="goTo('home')">← Go Back</button>
+    </section>
+
+
+    <!-- SCREEN 3: MAIN MENU -->
+    <section class="screen" id="menu">
+      <p class="eyebrow">WELCOME TO YOUR LITTLE WORLD</p>
+
+      <h1>It's All About You, Hadi! 🩷</h1>
+
+      <p class="subtitle">
+        Pick a little surprise. I made every single one with love.
+      </p>
+
+      <div class="menu-grid">
+
+        <button class="menu-card" onclick="goTo('memories')">
+          <span>📸</span>
+          <strong>Our Memories</strong>
+          <small>Pictures, chaos & love</small>
+        </button>
+
+        <button class="menu-card" onclick="goTo('song')">
+          <span>🎵</span>
+          <strong>Our Song</strong>
+          <small>A little song for us</small>
+        </button>
+
+        <button class="menu-card" onclick="goTo('wishes')">
+          <span>💌</span>
+          <strong>Letters for Hadi</strong>
+          <small>Words from my heart</small>
+        </button>
+
+        <button class="menu-card" onclick="goTo('funny')">
+          <span>😂</span>
+          <strong>Secret Files</strong>
+          <small>Exposing my little sister</small>
+        </button>
+
+        <button class="menu-card" onclick="goTo('reasons')">
+          <span>🫶</span>
+          <strong>Why I Love You</strong>
+          <small>Even when you're annoying</small>
+        </button>
+
+        <button class="menu-card" onclick="goTo('final')">
+          <span>🎂</span>
+          <strong>The Final Surprise</strong>
+          <small>Save this for last!</small>
+        </button>
+
+      </div>
+
+      <p class="tiny">
+        Warning: May cause excessive smiling and emotional damage. 😂💗
+      </p>
+    </section>
+
+
+    <!-- SCREEN 4: CAMERA AND MEMORIES -->
+    <section class="screen" id="memories">
+      <p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+
+      <h1>Our Little Photo Diary 📸</h1>
+
+      <p class="subtitle">
+        If I could keep every happy moment in a photo,
+        I'd never run out of space for you.
+      </p>
+
+      <div class="photo-grid">
+
+        <figure class="polaroid tilt-left">
+          <img src="images/hadi1.jpeg" alt="Hadi's favourite memory">
+          <figcaption>My little sunshine ☀️</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-right">
+          <img src="images/hadi2.jpeg" alt="A memory with Hadi">
+          <figcaption>Partners in crime 😂</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-right">
+          <img src="images/hadi3.jpeg" alt="A special sister moment">
+          <figcaption>My forever little girl 💗</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-left">
+          <img src="images/hadi4.jpeg" alt="A happy memory">
+          <figcaption>Us, always and forever 🫶</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-left">
+          <img src="images/hadi5.jpeg" alt="Hadi's favourite memory">
+          <figcaption>My little sunshine ☀️</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-right">
+          <img src="images/hadi6.jpeg" alt="A memory with Hadi">
+          <figcaption>Partners in crime 😂</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-right">
+          <img src="images/hadi7.jpeg" alt="A special sister moment">
+          <figcaption>My forever little girl 💗</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-left">
+          <img src="images/hadi8.jpeg" alt="A happy memory">
+          <figcaption>Us, always and forever 🫶</figcaption>
+        </figure>
+
+
+      </div>
+
+      <div class="paper-note">
+        Pictures may fade, time may pass, and life may change,
+        but you'll always be a part of my favourite memories. 🤍
+      </div>
+
+      <button class="back-btn" onclick="goTo('menu')">
+        ← Back to My World
+      </button>
+    </section>
+
+
+    <!-- SCREEN 5: SONG -->
+    <section class="screen" id="song">
+      <div class="top-sticker">🎧</div>
+      <p class="eyebrow">A LITTLE MELODY FOR US</p>
+
+      <h1>For My Hadi, With Love 🎵</h1>
+
+      <p class="subtitle">
+        Because some songs say the things that our hearts
+        sometimes struggle to put into words.
+      </p>
+
+      <div class="music-card">
+        <div class="album-art">👭💗🎶</div>
+
+        <p class="eyebrow">SISTERHOOD PLAYLIST</p>
+
+        <h2>Me & You, Always</h2>
+
+        <p>
+          Different moods. Endless memories.
+          One forever bond.
+        </p>
+
+        <a
+          class="primary song-link"
+          href="https://youtu.be/cylUN4d9kA0?si=HxpPErRZTqVAHHVq"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Play Our Sisters Song ▶
+        </a>
+
+        <p class="tiny">
+          Opens YouTube so you can choose the sisters song you love.
+        </p>
+      </div>
+
+      <div class="paper-note">
+        Every time you hear a song about sisters,
+        remember that you have someone who will always
+        be cheering for you. That's me! 🥹💗
+      </div>
+
+      <button class="back-btn" onclick="goTo('menu')">
+        ← Back to My World
+      </button>
+    </section>
+
+
+    <!-- SCREEN 6: HEARTFELT LETTERS -->
+    <section class="screen" id="wishes">
+      <div class="top-sticker">💌</div>
+      <p class="eyebrow">THINGS I MAY NOT SAY EVERY DAY</p>
+
+      <h1>Dear Hadi, ❤️</h1>
+
+      <article class="letter">
+        <p class="letter-heading">My little sister, my forever person...</p>
+
+        <p>
+          Happy Birthday, Hadi! ❤️ You're not just my little sister.
+          You're one of the most precious parts of my life.
+          You bring your own kind of happiness, craziness,
+          and warmth into our world.
+        </p>
+
+        <p>
+          I know I tease you, annoy you, argue with you,
+          and sometimes act like you're the biggest headache
+          ever. But the truth is, life wouldn't be the same without you.
+        </p>
+
+        <p class="urdu">
+          میری پیاری ہادی! اللہ تمہاری زندگی کو خوشیوں،
+          کامیابیوں، سکون اور بے شمار محبتوں سے بھر دے۔
+          تمہارے دل کی ہر اچھی خواہش پوری ہو اور تم ہمیشہ
+          ہنستی مسکراتی رہو۔ آمین۔ 🤍
+        </p>
+
+        <p class="urdu">
+          تم میری صرف چھوٹی بہن نہیں ہو بلکہ میری زندگی
+          کی ان خوبصورت نعمتوں میں سے ایک ہو جن کی قدر
+          لفظوں میں بیان کرنا مشکل ہے۔ اللہ تمہیں ہمیشہ
+          اپنی حفاظت میں رکھے۔ ❤️
+        </p>
+
+        <p>
+          I hope you grow into everything you've ever dreamed
+          of becoming. I hope you find happiness in little things,
+          strength during difficult days, and people who love
+          your heart as much as you deserve.
+        </p>
+
+        <p>
+          No matter how old you get, you'll always be my little
+          sister. And no matter where life takes us, you will
+          always have a place in my heart that belongs only to you.
+        </p>
+
+        <p class="signature">
+          I love you more than all our silly fights could ever show.
+          Happy Birthday, Hadi! 🩷
+        </p>
+      </article>
+
+      <button class="primary" onclick="goTo('funny')">
+        Okay, Enough Crying 😂
+      </button>
+
+      <button class="back-btn" onclick="goTo('menu')">
+        ← Back to My World
+      </button>
+    </section>
+
+
+    <!-- SCREEN 7: FUNNY NOTES -->
+    <section class="screen" id="funny">
+      <div class="top-sticker">🤭</div>
+      <p class="eyebrow">CONFIDENTIAL SISTER DOCUMENTS</p>
+
+      <h1>Hadi's Secret Files 😂</h1>
+
+      <p class="subtitle">
+        This information is classified.
+        But it's your birthday, so I'll make an exception.
+      </p>
+
+      <div class="funny-list">
+
+        <article class="funny-note">
+          <span>FILE 001 🗂️</span>
+          <h3>The Drama Department</h3>
+          <p>
+            You don't create drama, Hadi.
+            You create a whole season with multiple episodes. 😂
+          </p>
+        </article>
+
+        <article class="funny-note">
+          <span>FILE 002 🗂️</span>
+          <h3>Professional Annoying Person</h3>
+          <p>
+            Annoying me is your talent.
+            And unfortunately, you're extremely talented.
+          </p>
+        </article>
+
+        <article class="funny-note">
+          <span>FILE 003 🗂️</span>
+          <h3>Selective Hearing Award 🏆</h3>
+          <p>
+            I call you once: no response.
+            I mention food: suddenly, you're right here. 😭😂
+          </p>
+        </article>
+
+        <article class="funny-note">
+          <span>FILE 004 🗂️</span>
+          <h3>Lifetime Subscription</h3>
+          <p>
+            Congratulations! You've been subscribed to my
+            annoying-sibling service for life.
+            No refunds. No cancellation. 💅
+          </p>
+        </article>
+
+        <article class="funny-note urdu-note">
+          <span>فائل نمبر 005 😂</span>
+          <h3>میری پیاری مصیبت</h3>
+          <p>
+            اللہ تمہیں ہمیشہ خوش رکھے، کامیاب کرے،
+            اور مجھے تمہاری حرکتیں برداشت کرنے کا
+            صبر بھی عطا فرمائے۔ آمین! 😂🤲
+          </p>
+        </article>
+
+        <article class="funny-note">
+          <span>FILE 006 🗂️</span>
+          <h3>The Birthday Privilege 🎂</h3>
+          <p>
+            Today you're allowed to be extra dramatic,
+            eat all the cake, and pretend you're always right.
+            Enjoy it while it lasts, little miss! 😂💗
+          </p>
+        </article>
+
+      </div>
+
+      <button class="primary" onclick="goTo('reasons')">
+        Now, Let Me Be Serious 🥹
+      </button>
+
+      <button class="back-btn" onclick="goTo('menu')">
+        ← Back to My World
+      </button>
+    </section>
+
+
+    <!-- SCREEN 8: REASONS I LOVE YOU -->
+    <section class="screen" id="reasons">
+      <div class="top-sticker">🫶</div>
+      <p class="eyebrow">A LITTLE LIST FROM MY HEART</p>
+
+      <h1>Why You're So Special, Hadi 💗</h1>
+
+      <div class="reasons-list">
+        <div>♡ Because you make ordinary days memorable.</div>
+        <div>♡ Because no one else can be you.</div>
+        <div>♡ Because even our silly fights become memories.</div>
+        <div>♡ Because I can tease you and still love you endlessly.</div>
+        <div>♡ Because your happiness genuinely matters to me.</div>
+        <div>♡ Because you're my sister, and that will never change.</div>
+      </div>
+
+      <div class="paper-note urdu">
+        دنیا میں بہت سے رشتے ملتے ہیں، مگر بہن کا رشتہ
+        اپنی جگہ سب سے خاص ہوتا ہے۔ میری دعا ہے کہ ہمارے
+        درمیان یہ محبت ہمیشہ قائم رہے۔ 🤍
+      </div>
+
+      <button class="primary" onclick="goTo('final')">
+        Open Your Final Surprise 🎂
+      </button>
+
+      <button class="back-btn" onclick="goTo('menu')">
+        ← Back to My World
+      </button>
+    </section>
+
+
+    <!-- SCREEN 9: FINAL SURPRISE -->
+    <section class="screen" id="final">
+      <div class="top-sticker">🎀</div>
+      <p class="eyebrow">THE LAST LITTLE SURPRISE</p>
+
+      <h1>Happy Birthday, Hadi! 🎂💗</h1>
+
+      <div class="final-cake">🎂</div>
+
+      <p class="subtitle">
+        To my little sister, my forever headache,
+        my partner in crime, and one of my biggest blessings.
+      </p>
+
+      <article class="letter final-letter">
+        <h2>A Birthday Dua 🤍</h2>
+
+        <p class="urdu">
+          یا اللہ! میری بہن ہادی کی زندگی کو خوشیوں سے بھر دے،
+          اس کے نصیب اچھے فرما، اس کے ہر قدم میں آسانی عطا کر،
+          اسے ہر بری نظر اور پریشانی سے محفوظ رکھ، اور اسے دنیا
+          و آخرت کی بھلائیاں نصیب فرما۔ آمین یا رب العالمین۔
+        </p>
+
+        <p>
+          May you always have reasons to smile, courage to follow
+          your dreams, and love surrounding you wherever you go.
+        </p>
+
+        <h2>One Last Thing...</h2>
+
+        <p>
+          You may be growing up, but to me you'll always be
+          my little Hadi. And no birthday, distance, argument,
+          or change in life could ever make you less special to me.
+        </p>
+
+        <p class="signature">
+          Love you endlessly, little sister. Today and always. 💗
+        </p>
+      </article>
+
+      <button class="primary" onclick="celebrate()">
+        Make It Rain Confetti! 🎉
+      </button>
+
+      <button class="back-btn" onclick="goTo('menu')">
+        Explore Our Memories Again ♡
+      </button>
+    </section>
+
+    <footer>Handmade with love for Hadi · 11 October ♡</footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
